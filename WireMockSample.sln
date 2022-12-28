@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WireMockSample.Api", "src\WireMockSample.Api\WireMockSample.Api.csproj", "{012C5400-D81F-4043-9355-FF0532167D3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubServer.Host", "test\StubServer.Host\StubServer.Host.csproj", "{F080845F-10AB-4A69-8FDB-70820B8039DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperImportant.Service", "src\SuperImportant.Service\SuperImportant.Service.csproj", "{FF16BDA9-65D8-47F1-8E05-EA9C3DA24A83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FE12A7F6-005C-4175-8F07-E291A2C8E9ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".support", ".support", "{B33B2199-8488-4BA6-B806-008A085A17A4}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StubServer.Engine", "test\StubServer.Engine\StubServer.Engine.csproj", "{156EECF4-E310-49EB-9F5A-39AE9A870138}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WireMockSample.Api.Tests", "test\WireMockSample.Api.Tests\WireMockSample.Api.Tests.csproj", "{8AAF4AC8-7E73-41DE-B412-2244A075E170}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{012C5400-D81F-4043-9355-FF0532167D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{012C5400-D81F-4043-9355-FF0532167D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{012C5400-D81F-4043-9355-FF0532167D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{012C5400-D81F-4043-9355-FF0532167D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F080845F-10AB-4A69-8FDB-70820B8039DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F080845F-10AB-4A69-8FDB-70820B8039DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F080845F-10AB-4A69-8FDB-70820B8039DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F080845F-10AB-4A69-8FDB-70820B8039DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF16BDA9-65D8-47F1-8E05-EA9C3DA24A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF16BDA9-65D8-47F1-8E05-EA9C3DA24A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF16BDA9-65D8-47F1-8E05-EA9C3DA24A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF16BDA9-65D8-47F1-8E05-EA9C3DA24A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{156EECF4-E310-49EB-9F5A-39AE9A870138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{156EECF4-E310-49EB-9F5A-39AE9A870138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{156EECF4-E310-49EB-9F5A-39AE9A870138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{156EECF4-E310-49EB-9F5A-39AE9A870138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AAF4AC8-7E73-41DE-B412-2244A075E170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AAF4AC8-7E73-41DE-B412-2244A075E170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AAF4AC8-7E73-41DE-B412-2244A075E170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AAF4AC8-7E73-41DE-B412-2244A075E170}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F080845F-10AB-4A69-8FDB-70820B8039DD} = {FE12A7F6-005C-4175-8F07-E291A2C8E9ED}
+		{156EECF4-E310-49EB-9F5A-39AE9A870138} = {FE12A7F6-005C-4175-8F07-E291A2C8E9ED}
+		{8AAF4AC8-7E73-41DE-B412-2244A075E170} = {FE12A7F6-005C-4175-8F07-E291A2C8E9ED}
+	EndGlobalSection
+EndGlobal

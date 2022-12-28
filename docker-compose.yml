@@ -1,0 +1,19 @@
+services:
+  stubserver:
+    build:
+      context: .
+      dockerfile: test/StubServer.Host/Dockerfile
+    image: "wm/stubserver:latest"
+    ports:
+      - "5100:57308"
+  
+  api:
+    build:
+      context: .
+      dockerfile: src/WireMockSample.Api/Dockerfile
+    depends_on:
+      - stubserver
+    image: "wm/api:latest"
+    ports:
+      - "5000:80"
+  
