@@ -1,5 +1,6 @@
 using System.Net.Http.Json;
 using FluentAssertions;
+using WireMockSample.Api.Models;
 
 namespace WireMockSample.Api.Tests;
 
@@ -18,29 +19,25 @@ public class SampleTests
     [Fact]
     public async Task Given_a_simple_request_when_executed_a_simple_response_is_returned()
     {
-        // Arrange 
-        var id = Guid.NewGuid();
+        // Arrange
         
-        // Act
-        var response = await _client.GetAsync("/");
-        var result = await response.Content.ReadAsStringAsync();
+        //  Act
+        var response = await _client.GetAsync("api/get");
+        var result = await response.Content.ReadFromJsonAsync<PostData>();
         
         // Assert
-        result.Should().Contain("chriss");
-    }
-    
-    [Fact]
-    public async Task whatever()
-    {
-        // Arrange 
-        var id = Guid.NewGuid();
-        
-        // Act
-        var response = await _client.PostAsync("/", JsonContent.Create(new {
-            emailAddress =  id.ToString()
-        }));
 
-        var location = response.Headers.Location.Should().NotBeNull();
-        // Assert
+        for (int i = 0; i < 5; i++)
+        {
+            if (_apiFactory.WebHookDispatcher.ReceivedIds.Contains(result.Id.ToString()))
+            {
+                return;
+            }
+
+            await Task.Delay(1000);
+        }
+
+        throw new Exception("Didn't line up");
+
     }
 }

@@ -8,13 +8,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SuperImportant.Service\SuperImportant.Service.csproj" />
+        <ProjectReference Include="..\SuperImportant.Service\SuperImportant.Service.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
+        <Content Include="..\..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+        <PackageReference Include="Azure.Storage.Queues" Version="12.13.0" />
     </ItemGroup>
 
 </Project>

@@ -1,38 +1,33 @@
 using SuperImportant.Service;
-using WireMockSample.Api.Controllers;
+using WireMockSample.Api.Dispatcher;
+using WireMockSample.Api.QueueListener.Step1;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+//builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddHttpClient<SuperImportantService>(x =>
 {
     x.BaseAddress = new Uri(builder.Configuration["SomeServiceUrl"]);
 });
+
+builder.Services.AddHostedService<ProcessIncomingRequests>();
+builder.Services.AddSingleton<IWebHookDispatcher, WebHook>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllers();
 
 app.Run();
 
 public interface IApiMarker
 {
-    
 }

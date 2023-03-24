@@ -9,9 +9,9 @@ public class SuperImportantService
         _client = client;
     }
 
-    public async Task<string> GetImportantStuffAsync(CancellationToken cancellationToken)
+    public async Task<string> GetImportantStuffAsync(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _client.GetAsync("some/thing");
+        var result = await _client.GetAsync($"/drc/getratingid/{id}");
         return await result.Content.ReadAsStringAsync(cancellationToken);
     }
 }

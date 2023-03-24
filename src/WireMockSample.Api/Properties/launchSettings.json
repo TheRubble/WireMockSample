@@ -3,10 +3,11 @@
     "WireMockSample.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "applicationUrl": "https://localhost:7093;http://localhost:5181",
+      "launchBrowser": false,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7067;http://localhost:5018",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT" : "Development"
       }
     }
   }

@@ -13,7 +13,7 @@ using var server = WireMockServer.Start(new WireMockServerSettings
 Console.WriteLine(server.Url);
 
 var configuration = new Configuration(server);
-configuration.Setup();
+configuration.Setup(null);
 
 Console.WriteLine("Server Started");
 Console.WriteLine("Press a key to exit");
